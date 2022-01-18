@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+.app {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.title-container {
+  height: 70px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background: linear-gradient(to right, #6ec7eb, #4d7b92, #495274);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.site-title {
+  width: fit-content;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.all-weather {
+  padding: 30px;
+  padding-top: 0;
+  height: calc(100vh - 170px);
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+.city {
+  margin-bottom: 50px;
+}
+
+.city-weather {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+}
+
+.day {
+  color: white;
+  font-weight: bold;
+  /* border: 1px solid white; */
+  border-radius: 10px;
+  min-width: 310px;
+  margin: 0 20px 20px 0;
+  /* background-color: #6ec7eb; */
+}
+
+.date {
+  border-bottom: 1px solid white;
+  padding: 0 30px;
+}
+
+.day-details {
+  padding: 0 30px;
+  position: relative;
+}
+
+.predictability {
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  text-align: center;
+  font-size: 12px;
+  width: 78px;
+  position: absolute;
+  right: 0;
+}
+
+.at-a-glance {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+  border-bottom: 1px solid white;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 30px;
+  padding-left: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+button {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+.search-section {
+  margin: 0 auto;
+  width: 302px;
+}
+
+.search-button {
+  margin-left: 10px;
+}
+
+.search {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.city-list {
+  margin-top: 10px;
+}
+
+.city-list > button {
+  border: none;
+  margin: 10px;
+}
+
+.city-list>button:hover {
+  background-color: white;
+  color: gray;
+}
+
+.new-city {
+  display: flex;
+  justify-content: center;
 }
