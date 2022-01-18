@@ -83,6 +83,16 @@ function App() {
     setWeatherList(prevWeatherList => [...prevWeatherList, newCityWeather.data])
   }
 
+  const removeCity = (woeid) => {
+    setWeatherList(prevWeatherList => {
+      let index = prevWeatherList.findIndex(city => city.woeid === woeid)
+      if(index >= 0) {
+        prevWeatherList.splice(index, 1)
+      }
+      return [...prevWeatherList]
+    })
+  }
+
   return (
     <div className='app'>
       <div className='title-container'>
@@ -91,7 +101,10 @@ function App() {
       <div className='all-weather'>
         {weatherList.map((data, i) => (
           <div className='city' key={i}>
-            <h2>{data.title}, {data.parent.title}</h2>
+            <div className='city-title'>
+              <h2>{data.title}, {data.parent.title}</h2>
+              <button onClick={() => removeCity(data.woeid)}>Remove</button>
+            </div>
             <div className='city-weather'>
               {data.consolidated_weather.map((day, j) => (
                 <div className='day' style={{backgroundColor: colors[day.weather_state_abbr]}} key={j}>
